@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>My Counter Page</title>
+	
+	<script type='text/javascript'>
+		function addCounter(){
+			var counter = parseInt(document.getElementById('counter').innerHTML);
+			counter= counter + 1;
+			if(counter>0){
+				document.getElementById('counter').style.color="green";
+			}else if(counter<0){
+				document.getElementById('counter').style.color="red";
+			}else{
+				document.getElementById('counter').style.color="black";
+			}
+			document.getElementById('counter').innerHTML=counter;
+		}
+		
+		function substractCounter(){
+			var counter = parseInt(document.getElementById('counter').innerHTML);
+			counter = counter - 1;
+			if(counter>0){
+				document.getElementById('counter').style.color="green";
+			}else if(counter<0){
+				document.getElementById('counter').style.color="red";
+			}else{
+				document.getElementById('counter').style.color="black";
+			}
+			document.getElementById('counter').innerHTML=counter;
+		}
+		
+		function resetCounter(){
+			document.getElementById('counter').style.color='black';
+			document.getElementById('counter').innerHTML=0;
+		}	
+	</script>
+	<style>
+		body{
+			border:1px solid black;
+			height:300px;
+			padding-top:60px;
+			margin:200px auto;
+			width:300px;
+		}
+	</style>
+  </head>
+  <body>
+    <center>
+		<h1><b>COUNTER<b></h1>
+		<h1 id='counter'>0</h1>
+		<div>
+			<button type="button" onclick='substractCounter()' class="btn btn-danger btn-lg">-</button>&nbsp;&nbsp;
+			<button type="button" onclick='resetCounter()' class="btn btn-light btn-lg">Reset</button>&nbsp;&nbsp;
+			<button type="button" onclick='addCounter()' class="btn btn-primary btn-lg">+</button>
+		</div>
+	</center>
+  </body>
+</html>
